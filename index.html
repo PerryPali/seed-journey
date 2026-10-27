@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#edece1" />
+    <meta
+      name="description"
+      content="一段可以滚动的微小旅程。跟随一粒蒲公英，经历风、远方、泥土与新生。"
+    />
+    <title>一粒种子的旅行 · A Seed's Journey</title>
+    <link rel="stylesheet" href="journey.css" />
+    <script src="vendor/three.min.js" defer></script>
+    <script src="seed-models.js" defer></script>
+    <script src="science-notes.js" defer></script>
+    <script src="journey.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#story">跳到故事</a>
+    <div class="reading-progress" aria-hidden="true"><span></span></div>
+    <header class="site-header">
+      <a class="wordmark" href="#beginning"
+        ><span class="seed-mark" aria-hidden="true">✳</span> THE SEED ATLAS
+        <span class="brand-divider">/</span><small>微小生命观察记</small></a
+      >
+      <nav aria-label="页面导航">
+        <button
+          id="notes-open"
+          type="button"
+          aria-haspopup="dialog"
+          aria-controls="science-notes"
+          aria-expanded="false"
+        >
+          <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+            <path
+              d="M12 5v15M12 5C8 2 4 3 2 4v15c4-2 7-1 10 1 3-2 6-3 10-1V4c-2-1-6-2-10 1Z"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <span>科学手记<small>解读种子的旅行</small></span>
+        </button>
+        <span class="edition">FIELD NOTES — 001</span>
+      </nav>
+    </header>
+
+    <div class="landscape" aria-hidden="true">
+      <div class="sun-halo"></div>
+      <div class="horizon horizon-back"></div>
+      <div class="horizon horizon-front"></div>
+    </div>
+    <div class="scene-frame" aria-label="随故事变化的三维蒲公英场景" role="img">
+      <div id="seed-canvas"></div>
+      <p id="render-fallback" hidden>三维场景暂不可用，故事仍可继续阅读。</p>
+      <div class="scene-caption" aria-hidden="true">
+        <span class="caption-line"></span
+        ><span id="scene-caption">一朵完整的蒲公英，等待风来。</span>
+      </div>
+      <div class="specimen-meta" aria-hidden="true">
+      </div>
+    </div>
+
+    <main id="story">
+      <section class="chapter hero" id="beginning" aria-labelledby="title-0">
+        <div class="chapter-copy">
+          <p class="eyebrow"><span></span> A SMALL SEED. A WIDE WORLD.</p>
+          <h1 id="title-0">一粒种子的<br /><em>旅行。</em></h1>
+          <p class="hero-subtitle">A SEED’S JOURNEY</p>
+          <p class="prose">世界很大，我很小。<br />但一阵风，足够让我出发。</p>
+          <a class="start-link" href="#departure">跟我出发 <span aria-hidden="true">↓</span></a>
+          <p class="reading-hint">向下滚动，等风吹来，再跟上一粒种子</p>
+        </div>
+        <span class="margin-note">01 / 等待 · 每段旅程，都有一个起点</span>
+      </section>
+      <section class="chapter" id="departure" aria-labelledby="title-1">
+        <div class="chapter-copy">
+          <p class="eyebrow">01 — DEPARTURE / 离开</p>
+          <h2 id="title-1">风起时，<br />我松开了<em>手。</em></h2>
+          <p class="prose">
+            刚才，我还和同伴挤在一起，<br />组成一颗白色的小星球。<br />风轻轻一推，我便开始了自己的旅行。
+          </p>
+          <aside class="field-note">
+            <span>自然的设计 / 01</span>
+            <p>细长的喙连接着果实与冠毛。轻盈的冠毛，帮助这位小旅客借风传播。</p>
+          </aside>
+        </div>
+        <span class="margin-note">02 / 离开 · 告别，也是一种生长</span>
+      </section>
+      <section class="chapter" id="flight" aria-labelledby="title-2">
+        <div class="chapter-copy">
+          <p class="eyebrow">02 — DRIFT / 漂浮</p>
+          <h2 id="title-2">没有翅膀，<br />也能去<em>远方。</em></h2>
+          <p class="prose">
+            我不知道风要去哪里。<br />掠过草尖，穿过光的缝隙，<br />把每一次摇晃，都当成新的方向。
+          </p>
+          <aside class="field-note">
+            <span>自然的设计 / 02</span>
+            <p>冠毛不是一把密不透风的小伞。细丝之间留有空隙，空气可以穿过它们。</p>
+          </aside>
+          <p class="interaction-hint">轻轻移动鼠标，看看风里的摇曳。</p>
+        </div>
+        <span class="margin-note">03 / 漂浮 · 把未知，交给风</span>
+      </section>
+      <section class="chapter" id="landing" aria-labelledby="title-3">
+        <div class="chapter-copy">
+          <p class="eyebrow">03 — ARRIVAL / 落地</p>
+          <h2 id="title-3">落下来，<br />并不是<em>终点。</em></h2>
+          <p class="prose">
+            风慢了，土地渐渐靠近。<br />我在泥土间停下来，<br />把接下来的等待，交给一场雨。
+          </p>
+          <aside class="field-note">
+            <span>自然的设计 / 03</span>
+            <p>落地不等于立刻萌发。水分、氧气和适宜的温度，是种子开启下一幕的重要条件。</p>
+          </aside>
+        </div>
+        <span class="margin-note">04 / 等待 · 泥土记得每一个抵达者</span>
+      </section>
+      <section class="chapter finale" id="growth" aria-labelledby="title-4">
+        <div class="chapter-copy">
+          <p class="eyebrow">04 — A NEW BEGINNING / 新生</p>
+          <h2 id="title-4">向下扎根，<br />向光<em>生长。</em></h2>
+          <p class="prose">
+            等待之后，一条细根先向下探去。<br />随后，嫩芽向上，叶片迎着光舒展。<br />原来，停下的地方也能重新出发。
+          </p>
+          <div class="closing-line">微小的生命，也有自己的辽阔。</div>
+          <a class="start-link" href="#beginning">再旅行一次 <span aria-hidden="true">↗</span></a>
+        </div>
+        <span class="margin-note">05 / 新生 · TO BE CONTINUED</span>
+      </section>
+    </main>
+
+    <div class="journey-controls">
+      <nav class="chapter-nav" aria-label="旅行章节">
+        <a href="#beginning" aria-label="序章：等待" aria-current="step"
+          ><span></span><small>等待</small></a
+        >
+        <a href="#departure" aria-label="第一章：离开"><span></span><small>离开</small></a>
+        <a href="#flight" aria-label="第二章：漂浮"><span></span><small>漂浮</small></a>
+        <a href="#landing" aria-label="第三章：落地"><span></span><small>落地</small></a>
+        <a href="#growth" aria-label="第四章：新生"><span></span><small>新生</small></a>
+      </nav>
+      <p class="chapter-count"><span id="chapter-number">01</span><span> / 05</span></p>
+    </div>
+
+    <dialog id="science-notes" aria-labelledby="notes-title">
+      <header class="notes-heading">
+        <p class="eyebrow">THE SEED ATLAS / FIELD NOTES</p>
+        <h2 id="notes-title">科学<em>手记。</em></h2>
+        <p>把旅途中的好奇，翻成一页自然。</p>
+        <button
+          class="dialog-close"
+          id="notes-close"
+          type="button"
+          aria-label="关闭科学手记"
+          autofocus
+        >
+          ×
+        </button>
+      </header>
+      <div class="notes-tabs" role="tablist" aria-label="科学手记篇章">
+        <button id="note-tab-0" role="tab" aria-controls="note-0" aria-selected="true" tabindex="0">
+          01 出发
+        </button>
+        <button
+          id="note-tab-1"
+          role="tab"
+          aria-controls="note-1"
+          aria-selected="false"
+          tabindex="-1"
+        >
+          02 乘风
+        </button>
+        <button
+          id="note-tab-2"
+          role="tab"
+          aria-controls="note-2"
+          aria-selected="false"
+          tabindex="-1"
+        >
+          03 落地
+        </button>
+        <button
+          id="note-tab-3"
+          role="tab"
+          aria-controls="note-3"
+          aria-selected="false"
+          tabindex="-1"
+        >
+          04 新生
+        </button>
+      </div>
+      <div class="notes-reading" tabindex="0" aria-label="手记正文，可滚动阅读">
+        <section id="note-0" role="tabpanel" aria-labelledby="note-tab-0">
+          <p class="note-number">FIELD NOTE / 01</p>
+          <h3>飞走的，是种子<br />还是果实？</h3>
+          <figure class="note-figure">
+            <svg
+              viewBox="0 0 400 210"
+              role="img"
+              aria-label="蒲公英飞行单元示意：冠毛通过细长的喙连接下方的果实，果实内含一粒种子。"
+            >
+              <g fill="none" stroke="#809367" stroke-width="1.5">
+                <path
+                  d="M153 94 76 48M153 94 91 31M153 94 116 21M153 94 142 16M153 94 167 19M153 94 191 28M153 94 218 44M153 94 228 65M153 94 69 72M153 94V160"
+                />
+                <path d="M200 42H266M155 124H266M161 179H266" stroke="#b0b99c" />
+              </g>
+              <ellipse cx="153" cy="176" rx="10" ry="24" fill="#978063" />
+              <ellipse cx="153" cy="176" rx="4" ry="15" fill="#e9d6ae" />
+              <g fill="#43583e" font-size="13">
+                <text x="276" y="47">冠毛</text>
+                <text x="276" y="129">喙</text>
+                <text x="276" y="184">果实与种子</text>
+              </g>
+            </svg>
+            <figcaption>一位小旅客，带着自己的飞行装备 · 结构示意</figcaption>
+          </figure>
+          <p>
+            我们习惯把飞走的小伞叫作“种子”。更准确地说，它是一个内含一粒种子的干燥果实。果实上方的细长结构叫作喙，末端连接着一簇冠毛。
+          </p>
+          <p>
+            许多这样的果实聚在一起，形成熟悉的白色绒球。风来时，成熟的果实可以离开母株，开始传播。
+          </p>
+          <aside class="note-observation">
+            <strong>回到画面看一看</strong>白色部分是冠毛；细杆下方的棕色小颗粒才是装着种子的果实。
+          </aside>
+        </section>
+        <section id="note-1" role="tabpanel" aria-labelledby="note-tab-1" hidden>
+          <p class="note-number">FIELD NOTE / 02</p>
+          <h3>没有翅膀，<br />怎样借风旅行？</h3>
+          <figure class="note-figure">
+            <svg
+              viewBox="0 0 400 210"
+              role="img"
+              aria-label="风吹过疏松冠毛，冠毛帮助果实减缓下落并随气流移动。"
+            >
+              <g fill="none" stroke="#a8b794" stroke-width="2" stroke-linecap="round">
+                <path
+                  d="M30 65Q65 40 108 63T183 65M26 102Q70 77 112 100M42 139Q85 118 126 137M290 63Q327 38 369 60M296 104Q332 82 375 102"
+                />
+                <path d="m360 52 9 8-12 2M366 94l9 8-12 2" />
+              </g>
+              <g fill="none" stroke="#6c855c" stroke-width="1.6">
+                <path
+                  d="m223 86-62-44m62 44-38-63m38 63-9-72m9 72 20-67m-20 67 45-54m-45 54 66-31m-66 31-3 65"
+                />
+              </g>
+              <ellipse cx="220" cy="167" rx="8" ry="21" fill="#978063" />
+            </svg>
+            <figcaption>风负责带路，冠毛帮助它留在空中 · 传播示意</figcaption>
+          </figure>
+          <p>
+            冠毛由许多细丝组成，是疏松的结构，并不是一张密不透风的伞面。它增大了果实与空气相互作用的范围，帮助减缓下落。
+          </p>
+          <p>
+            蒲公英不会主动飞行。它借助气流移动，落在哪里与风和周围环境有关，并没有预先选好的终点。
+          </p>
+          <aside class="note-observation">
+            <strong>回到画面看一看</strong
+            >跟随种子观察轻微的摇摆；动画中的风线用于表现气流方向，不是实际可见的空气。
+          </aside>
+        </section>
+        <section id="note-2" role="tabpanel" aria-labelledby="note-tab-2" hidden>
+          <p class="note-number">FIELD NOTE / 03</p>
+          <h3>抵达土地，<br />为什么还要等？</h3>
+          <figure class="note-figure conditions-figure">
+            <div>
+              <span aria-hidden="true">◊</span><strong>水分</strong><small>让种子吸水</small>
+            </div>
+            <div>
+              <span aria-hidden="true">≈</span><strong>氧气</strong><small>支持呼吸活动</small>
+            </div>
+            <div>
+              <span aria-hidden="true">☀</span><strong>适宜温度</strong
+              ><small>让萌发得以进行</small>
+            </div>
+            <figcaption>落地只是开始，萌发还需要合适的条件</figcaption>
+          </figure>
+          <p>
+            落地不等于马上萌发。种子需要水分、氧气和适宜的温度；缺少合适条件时，旅程可能暂时停在这里。
+          </p>
+          <p>
+            蒲公英常在土壤表面或靠近表面的地方萌发，光也有助于萌发。因此，故事中的“入土”是浅层接触的示意，不表示需要深埋。
+          </p>
+          <aside class="note-observation">
+            <strong>回到画面看一看</strong
+            >一场雨代表水分条件的变化。冠毛伏下、飘离是叙事处理，脱落不是萌发的必要前提。
+          </aside>
+        </section>
+        <section id="note-3" role="tabpanel" aria-labelledby="note-tab-3" hidden>
+          <p class="note-number">FIELD NOTE / 04</p>
+          <h3>先向下扎根，<br />再向上寻找光。</h3>
+          <figure class="note-figure">
+            <svg
+              viewBox="0 0 400 210"
+              role="img"
+              aria-label="幼苗生长示意：地表下方的根向下延伸，上方嫩芽与叶片伸展。"
+            >
+              <path d="M28 111H372V199H28Z" fill="#ddd1b8" />
+              <path d="M28 111H372" stroke="#ad9f83" fill="none" />
+              <path
+                d="M193 109Q182 140 193 186M188 139l-23 15M189 157l25 15"
+                fill="none"
+                stroke="#997951"
+                stroke-width="3"
+                stroke-linecap="round"
+              />
+              <path d="M193 111Q204 85 194 56" fill="none" stroke="#6f8955" stroke-width="4" />
+              <path
+                d="M197 82Q155 87 145 51q39-4 52 31M197 70q2-40 48-39-4 35-48 39"
+                fill="#9aaf72"
+              />
+              <g fill="#43583e" font-size="13">
+                <text x="278" y="66">嫩芽与叶片</text>
+                <text x="278" y="160">根</text>
+              </g>
+              <path d="M216 65H267M212 157h55" stroke="#a1ab8e" />
+            </svg>
+            <figcaption>不同部分朝着不同方向生长 · 幼苗示意</figcaption>
+          </figure>
+          <p>条件合适时，胚根先伸出，帮助幼苗固定并吸收水分。随后，嫩芽向上生长，叶片逐渐展开。</p>
+          <p>
+            蒲公英之后会形成贴近地面的基生叶丛。画面中的幼苗、根系和生长速度都经过简化，不代表真实比例或实际用时。
+          </p>
+          <aside class="note-observation">
+            <strong>回到画面看一看</strong
+            >根与嫩芽从同一个生命起点延伸。旅行没有结束，只是换了一种方式。
+          </aside>
+        </section>
+        <details class="notes-sources">
+          <summary>资料依据与画面说明</summary>
+          <p>
+            本页为简短科普整理。图形为本地绘制的教学示意，时间与比例经过压缩，并非每一粒种子都会成功萌发。
+          </p>
+          <ul>
+            <li>UC Statewide IPM Program · Dandelion（蒲公英生活史与传播）</li>
+            <li>Royal Horticultural Society · How to sow seeds indoors（种子萌发与幼苗生长）</li>
+          </ul>
+        </details>
+      </div>
+      <footer class="notes-footer">
+        <span>一粒种子，四页自然。</span
+        ><button id="notes-return" type="button">
+          继续这段旅行 <span aria-hidden="true">→</span>
+        </button>
+      </footer>
+    </dialog>
+    <noscript
+      ><p class="no-script">
+        当前未启用 JavaScript。故事正文与章节链接仍可阅读；启用后可查看三维场景。
+      </p></noscript
+    >
+  </body>
+</html>
